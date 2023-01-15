@@ -8,3 +8,15 @@ services:
     volumes:
       - ./api:/app
       - /app/node_modules
+  myblog:
+    build: ./myblog
+    container_name: myblog_c
+    ports:
+      - "3000:3000"
+    # on windows, remove volume
+    volumes:
+      - ./myblog:/app
+      - /app/node_modules
+    # Start container in interactive mode. Container won't automatically shut down
+    stdin_open: true
+    tty: true
