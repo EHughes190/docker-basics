@@ -92,3 +92,12 @@ Docker Desktop installed (comes with all the other bits as well). Great UI to ge
 - So we can pass another volume (an anonymous volume) to prevent this:
   `docker run --name myapp_c_nodemon -p 4000:4000 --rm -v /Users/edhughes/Developer/training/docker/docker-intro/api:/app -v /app/node_modules myapp:nodemon`
   This tells docker to use it’s node_modules folder stored in itself, rather than updating it if it’s deleted on the local machine.
+
+## DOCKER COMPOSE
+
+- This simplifies implementing volumes above.
+- Create a `docker-compose.yaml` file in the root of the project, and add config to it, specifying ports, container name, and volumes
+- If we run `docker-compose up`, docker will use the config to create an image, and run a container.
+- If we run `docker-compose down`, docker will stop the container, and delete the container.
+- To delete the image: `docker-compose down —rmi all`
+- To delete the volumes: `docker-compose down -v`
