@@ -26,21 +26,15 @@ Docker Desktop installed (comes with all the other bits as well). Great UI to ge
 
 ### RUN CONTAINERS
 
-- NOTE: This creates a new container each time, and will block the terminal whilst running:
-  `docker run —name <container-name> -p <host-port>:<container-port> <image-name>`
+- NOTE: This creates a new container each time, and will block the terminal whilst running: `docker run —name <container-name> -p <host-port>:<container-port> <image-name>`
 
 e.g. `docker run —name myapp_c1 -p 4000:4000 myapp`
 
-- Run with “detached” flag to stop terminal blocking:
+- Run with “detached” flag to stop terminal blocking: `docker run —name myapp_c1 -p 4000:4000 -d myapp`
 
-`docker run —name myapp_c1 -p 4000:4000 -d myapp`
+- Run a container with a specific tag version of an image: `docker run —name myapp_c1 -p 4000:4000 -d myapp:v1`
 
-- Run a container with a specific tag version of an image:
-  `docker run —name myapp_c1 -p 4000:4000 -d myapp:v1`
-
-- Run a container which, once stopped, will delete the instance of the container (--rm):
-
-`docker run --name myapp_c_nodemon -p 4000:4000 --rm myapp:nodemon`
+- Run a container which, once stopped, will delete the instance of the container (--rm): `docker run --name myapp_c_nodemon -p 4000:4000 --rm myapp:nodemon`
 
 ### LIST ACTIVE CONTAINERs
 
