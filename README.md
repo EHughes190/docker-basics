@@ -1,6 +1,14 @@
 # Docker
 
+This is a docker tutorial repo for the basics of using docker to create and use images
+
 Docker Desktop installed (comes with all the other bits as well). Great UI to get to grips with Docker
+
+## THE DOCKER FILE
+
+- Made up of layers
+- Parent layer will normally be a runtime env like node.
+- When run in a container, required images (like node) will be pull automatically
 
 ## COMMANDS:
 
@@ -101,3 +109,13 @@ Docker Desktop installed (comes with all the other bits as well). Great UI to ge
 - If we run `docker-compose down`, docker will stop the container, and delete the container.
 - To delete the image: `docker-compose down —rmi all`
 - To delete the volumes: `docker-compose down -v`
+
+## SHARE IMAGES
+
+- Sign up/sign in to docker hub
+- Click Create Repository
+- Locally, create an image (with the name of your created repo). Something like 'example_user/appname'
+  e.g. `docker build -t example_user/appname`
+- Login to docker locally: `docker login` and enter credentials
+- Push the image to docker hub: `docker push example_user/appname`
+- Now, your image is available for people to download!
